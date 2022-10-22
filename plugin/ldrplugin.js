@@ -23,7 +23,7 @@ function connectHardware() {
     sensor_pir = new Gpio(16, 'out', 'both');   
     
     var Gpio = require('onoff').Gpio;
-    var LED_red = new Gpio(4, 'out');   
+    var LED_red = new Gpio(4 , 'out');   
 
     var switch_light;
 
