@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/nav.ejs') %> <br><br><br>
+     
+    <div class="container">
+        
+        <div class="row">
+ 
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h5 class="card-header">SMART LIGHT</h5>
+                    <div class="card-body"> 
+                      <p class="card-text">...</p>
+
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Feedback</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Actuator (Led)</td>
+                            <td><%= actuators.leds[1].value %></td> 
+                                <% if (actuators.leds[1].value == 0){ %>
+                                    <td>Light is Off</td>
+                                <% } else{ %>
+                                    <td>Light is On</td>
+                                <% } %>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Sensor (PIR)</td>
+                            <td><%= actuators.leds[1].value %></td> 
+                                <% if (actuators.leds[1].value == 0){ %>
+                                    <td>No one is present</td>
+                                <% } else{ %>
+                                    <td>There is someone</td>
+                                <% } %>
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Sensor (LDR)</td>
+                            <td> null </td>
+                            <td> null </td>
+                          </tr> 
+
+                        </tbody>
+                      </table>
+
+                      <a href="/">Go back to home page</a>
+                    </div>
+                </div>
+            </div> 
+        </div> <br>
+
+        <div class="row">
+            <%- include('./partials/footer.ejs') %>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
