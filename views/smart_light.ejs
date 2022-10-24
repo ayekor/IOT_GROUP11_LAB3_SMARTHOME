@@ -54,8 +54,12 @@
                           <tr>
                             <th scope="row">3</th>
                             <td>Sensor (LDR)</td>
-                            <td> null </td>
-                            <td> null </td>
+                            <td><%= sensors.ldr.value %></td> 
+                                <% if (sensors.ldr.value  == 0){ %>
+                                    <td>Daylight</td>
+                                <% } else{ %>
+                                    <td>Darkness</td>
+                                <% } %>
                           </tr> 
 
                         </tbody>

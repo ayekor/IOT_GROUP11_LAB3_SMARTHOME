@@ -1,10 +1,10 @@
-const { actuators } = require("../resources/model");
+const { actuators,sensors } = require("../resources/model");
 const express = require("express");
 const actuators_router = new express.Router();
 
 actuators_router.get("/actuators", async (req, res) => {
       //res.status(200).send(actuators);
-        res.render('smart_light',{title: 'Smart Lighting',actuators})
+        res.render('smart_light',{title: 'Smart Lighting',actuators, sensors})
   });
 
 actuators_router.get("/actuators/leds/:id", async (req, res) => {

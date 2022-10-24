@@ -4,8 +4,8 @@ const app = express();
 
 app.set('view engine','ejs');
 
-app.use('/css', express.static('./node_modules/bootstrap/dist/css'))
-app.use('/js', express.static('./node_modules/bootstrap/dist/js'))
+app.use(express.static('node_modules/bootstrap/dist/css'))
+app.use(express.static('node_modules/bootstrap/dist/js'))
 
 app.use('/img', express.static('./public/img'))
 
@@ -31,6 +31,10 @@ app.use((req,res)=>{
 
 //pirPlugin.start({'simulate': true, 'frequency': 10000});
 
-var ldrPlugin = require('./plugin/ldrplugin');
+//var ldrPlugin = require('./plugin/ldrplugin');
 
-ldrPlugin.start({'simulate': true, 'frequency': 10000});
+//ldrPlugin.start({'simulate': true, 'frequency': 10000});
+
+var smartLightSubsystem = require('./plugin/smartLight');
+
+smartLightSubsystem.start({'simulate': true, 'frequency': 10000});

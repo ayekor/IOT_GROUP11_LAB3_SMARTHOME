@@ -4,19 +4,11 @@
         "description": "A Smart Home",
         "port": 3000,
         "sensors": {
-            "temperature": {
-                "name": "Temperature Sensor",
-                "description": "An ambient temperature sensor.",
-                "unit": "celsius",
+            "ldr": {
+                "name": "Light dependent resistor",
+                "description": "detect darkness", 
                 "value": 0,
-                "gpio": 12
-            },
-            "humidity": {
-                "name": "Humidity Sensor",
-                "description": "An ambient humidity sensor.",
-                "unit": "%",
-                "value": 0,
-                "gpio": 12
+                "gpio": 22
             },
             "pir": {
                 "name": "Passive Infrared",
@@ -31,12 +23,7 @@
                     "name": "LED 1",
                     "value": 0,
                     "gpio": 4
-                },
-                "2": {
-                    "name": "LED 2",
-                    "value": 0,
-                    "gpio": 9
-                }
+                } 
             }
         }
     }
