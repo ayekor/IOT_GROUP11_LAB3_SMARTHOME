@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/nav.ejs') %> <br><br><br>
+     
+    <div class="container">
+        
+        <div class="row">
+ 
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h5 class="card-header">SMART TEMPERATURE REGULATION</h5>
+                    <div class="card-body">  
+
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Predefined Threshold</th>
+                            <th scope="col">Readings</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Humidity</td>
+                            <td><%= sensors.dht.predefined_humidity %> </td> 
+                            <td><%= sensors.dht.humidity %> %</td>  
+                            <td>Store data</td> 
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Temperature</td>
+                            <td>Upper: <%= sensors.dht.predefined_temp_up %>°C  &nbsp; Lower: <%= sensors.dht.predefined_temp_low %>°C</td> 
+                            <td><%= sensors.dht.temperature %>°C </td>  
+                              
+                            <% if (sensors.dht.temperature > sensors.dht.predefined_temp_up){ %>
+                                <td>Open Both Windows</td>
+                            <% } else if(sensors.dht.temperature < sensors.dht.predefined_temp_low){ %>
+                                <td>Turn Heater On</td> 
+                            <% } else{ %>
+                                <td>Temperature is ok</td>
+                            <% } %>
+ 
+                          </tr> 
+ 
+
+                        </tbody>
+                      </table>
+
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Measured Humidity Values</h5>
+                          <p class="card-text"><%= sensors.dht.humidity_data %></p> 
+                        </div>
+                      </div>
+
+                      <a href="/">Go back to home page</a>
+                    </div>
+
+                   
+                </div>
+
+                
+            </div> 
+        </div> <br>
+
+        <div class="row">
+            <%- include('./partials/footer.ejs') %>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

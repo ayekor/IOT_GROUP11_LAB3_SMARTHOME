@@ -7,7 +7,7 @@ app.set('view engine','ejs');
 app.use(express.static('node_modules/bootstrap/dist/css'))
 app.use(express.static('node_modules/bootstrap/dist/js'))
 
-app.use('/img', express.static('./public/img'))
+app.use(express.static('public/img')) 
 
 app.get('/',(req,res) => {
     res.render('index',{title:'Group 11'});
@@ -15,6 +15,9 @@ app.get('/',(req,res) => {
 
 const actuatorRouter = require('./routes/actuators') 
 app.use('/pi',actuatorRouter)
+
+const sensorRouter = require('./routes/sensors') 
+app.use('/pi',sensorRouter)
 
 
 app.listen(3000);
@@ -38,3 +41,8 @@ app.use((req,res)=>{
 var smartLightSubsystem = require('./plugin/smartLight');
 
 smartLightSubsystem.start({'simulate': true, 'frequency': 10000});
+
+
+var smartTempSubsystem = require('./plugin/smartTemp');
+
+smartTempSubsystem.start({'simulate': true, 'frequency': 10000});

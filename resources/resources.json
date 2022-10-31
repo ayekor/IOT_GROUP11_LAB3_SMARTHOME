@@ -15,6 +15,16 @@
                 "description": "A passive infrared sensor. When 'true' someone is present.",
                 "value": 0,
                 "gpio": 17
+            },
+            "dht":{
+                "name": "DHT",
+                "description": "Digital Humidity and Temperature",
+                "humidity":0,
+                "predefined_humidity":"N/A",
+                "humidity_data":"null",
+                "temperature":0,
+                "predefined_temp_up":32,
+                "predefined_temp_low":28
             }
         },
         "actuators": {
