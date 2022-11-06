@@ -38,11 +38,15 @@ app.use((req,res)=>{
 
 //ldrPlugin.start({'simulate': true, 'frequency': 10000});
 
-var smartLightSubsystem = require('./plugin/smartLight');
+//var smartLightSubsystem = require('./plugin/smartLight');
 
-smartLightSubsystem.start({'simulate': true, 'frequency': 10000});
+//smartLightSubsystem.start({'simulate': true, 'frequency': 10000});
 
 
-var smartTempSubsystem = require('./plugin/smartTemp');
+//var smartTempSubsystem = require('./plugin/smartTemp');
 
-smartTempSubsystem.start({'simulate': true, 'frequency': 10000});
+//smartTempSubsystem.start({'simulate': true, 'frequency': 10000});
+
+var smartGarden = require('./plugin/smartgarden');
+
+smartGarden.start({'simulate': true, 'frequency': 10000});

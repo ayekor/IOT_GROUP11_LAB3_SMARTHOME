@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ads1115": "^1.2.0",
     "bootstrap": "^5.2.2",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "i2c-bus": "^5.2.2",
     "node-dht-sensor": "^0.4.3",
     "nodemon": "^2.0.20",
     "onoff": "^6.0.3",
