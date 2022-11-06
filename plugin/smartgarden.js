@@ -14,18 +14,28 @@ function connectHardware() {
     const i2c = require('i2c-bus')
     i2c.openPromisified(1).then(async (bus) => {
     const ads1115 = await ADS1115(bus)
-    // ads1115.gain = 1
 
-    for (let i = 0; i < 1000; i++) {
+    for (var i = 0; i < Infinity; i++) {
         let value = await ads1115.measure('0+GND')
-        console.log(value)
+
+        console.log("Moisture Value:" + value)
+
+        // Ayekor: is this supposed to be 0 OR 1? or 0 to 100?. change the if condition bellow accordindly then delete the comment
+        if(value < 50){
+            console.log('Open the irrigation..');
+        }
+        else{
+            console.log('Close the irrigation..');
+        }
+    
+        i--;
     }
     })
  
-    var Gpio = require('onoff').Gpio;
-    var garden = new Gpio(4, 'out');   
+    //var Gpio = require('onoff').Gpio;
+    //var garden = new Gpio(4, 'out');   
     
-    console.log(garden.readSync() );
+    //console.log(garden.readSync() );
    
 };
   
