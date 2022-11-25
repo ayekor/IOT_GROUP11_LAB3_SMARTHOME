@@ -37,9 +37,11 @@ function connectHardware() {
                 process.exit(1);
             } else { 
         
-                moisture = (value / max_threshold) * 100 
+                moisture = (value / max_threshold) * 100
+                //console.log('Channel 0');
+                //console.log(value);
                 console.log('The moisture in the soil is :', Math.round(moisture,2), '%');    
-                //process.exit(0);
+                process.exit(0);
             }
         
         
