@@ -17,6 +17,9 @@
     "node-dht-sensor": "^0.4.3",
     "nodemon": "^2.0.20",
     "onoff": "^6.0.3",
-    "pi-gpio": "^0.0.8"
+    "pi-gpio": "^0.0.8",
+    "raspi": "^6.0.1",
+    "raspi-i2c": "^6.2.4",
+    "raspi-kit-ads1x15": "^1.0.0"
   }
 }

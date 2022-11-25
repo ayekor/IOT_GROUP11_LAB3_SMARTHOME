@@ -49,4 +49,4 @@ app.use((req,res)=>{
 
 var smartGarden = require('./plugin/smartgarden');
 
-smartGarden.start({'simulate': true, 'frequency': 10000});
+smartGarden.start({'simulate': true, 'frequency': 5000});
